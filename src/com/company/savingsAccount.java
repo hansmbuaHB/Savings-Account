@@ -2,21 +2,24 @@ package com.company;
 
 public class savingsAccount {
 
-private static int annualInterestRate = 0;
-private int savingBalance = 0;
+    private static double annualInterestRate = 0;
+    private double savingBalance;
 
-public savingsAccount(int annualInterestRate){
+    public savingsAccount(double savingBalance) {
 
-    this.savingBalance = savingBalance;
-}
+        this.savingBalance = savingBalance;
+    }
 
-public void monthlyInterest(){
-    this.savingBalance = (savingBalance * annualInterestRate)/12;
-}
+    public void calculateMonthlyInterest() {
+        this.savingBalance = (savingBalance * annualInterestRate) / 12;
+    }
 
-public static void modifyInterestRate(int annualInterestRate){
-savingsAccount.annualInterestRate = annualInterestRate;
+    public static void modifyInterestRate(double annualInterestRate) {
+        savingsAccount.annualInterestRate = annualInterestRate;
 
-}
+    }
+    public double getSavingBalance(){
+        return savingBalance;
+    }
 
 }
